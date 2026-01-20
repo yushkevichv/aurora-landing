@@ -40,8 +40,8 @@ export function Hero() {
 
                     {/* LEFT: VERTICAL TEXT */}
                     <div className="col-span-2 hidden md:flex items-end pb-24">
-                        <div className="writing-vertical-rl rotate-180 font-display font-medium text-4xl md:text-6xl text-white/20 whitespace-nowrap">
-                            HEAVY INDUSTRY SOLUTIONS
+                        <div className="writing-vertical-rl font-display font-medium text-4xl md:text-6xl text-white/20 whitespace-nowrap">
+                            ПРОМЫШЛЕННЫЕ РЕШЕНИЯ
                         </div>
                     </div>
 
@@ -63,9 +63,9 @@ export function Hero() {
 
                     {/* RIGHT: DECORATIVE DATA */}
                     <div className="col-span-2 hidden md:flex flex-col justify-center items-end text-right font-mono text-[10px] text-aurora-orange/60 gap-4">
-                        <p>COORD_X: 59.9343</p>
-                        <p>COORD_Y: 30.3351</p>
-                        <p>LOAD_ZN: 100%</p>
+                        <p>ШИРОТА: 59.9343</p>
+                        <p>ДОЛГОТА: 30.3351</p>
+                        <p>НАГРУЗКА: 100%</p>
                         <div className="h-32 w-[1px] bg-aurora-orange/20"></div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@ export function Hero() {
 
                     {/* SCROLL TRIGGER */}
                     <div className="hidden md:flex flex-col items-center gap-2 group cursor-pointer">
-                        <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest group-hover:text-aurora-orange transition-colors">Scroll_Down</span>
+                        <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest group-hover:text-aurora-orange transition-colors">Вниз</span>
                         <div className="w-[1px] h-12 bg-white/20 group-hover:bg-aurora-orange transition-colors relative overflow-hidden">
                             <div className="absolute top-0 left-0 w-full h-1/2 bg-aurora-orange animate-slide-down" />
                         </div>

@@ -15,17 +15,17 @@ export function Header() {
     };
 
     return (
-    return (
         <>
             {/* TOP LEFT: LOGO */}
             <div className="fixed top-8 left-8 z-50 mix-blend-difference">
                 <Link href="/" className="group block">
-                    <span className="font-display font-bold text-3xl tracking-tighter text-white block leading-none">
-                        АВРОРА
-                    </span>
-                    <span className="font-mono text-[10px] text-aurora-orange uppercase tracking-widest block mt-1">
-                        ZMK_SYSTEM_V6
-                    </span>
+                    <Image
+                        src="/logo.png"
+                        alt="ЗМК АВРОРА"
+                        width={180}
+                        height={60}
+                        className="w-auto h-12 md:h-16 object-contain brightness-0 invert"
+                    />
                 </Link>
             </div>
 
@@ -58,7 +58,7 @@ export function Header() {
                             key={item}
                             href={href}
                             onClick={(e) => scrollToSection(e, href)}
-                            className="writing-vertical-rl font-mono text-xs text-white/40 hover:text-aurora-orange uppercase tracking-widest transition-colors rotate-180"
+                            className="writing-vertical-rl font-mono text-xs text-white/40 hover:text-aurora-orange uppercase tracking-widest transition-colors py-4"
                         >
                             {item}
                         </a>
