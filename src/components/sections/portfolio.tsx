@@ -39,12 +39,12 @@ export function Portfolio() {
                     </div>
                 </div>
 
-                {/* Classic Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                {/* Industrial Slider (Horizontal Scroll) */}
+                <div className="flex overflow-x-auto gap-8 pb-12 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
                     {projects.map((project) => (
-                        <div key={project.id} className="group">
+                        <div key={project.id} className="min-w-[85vw] md:min-w-[45vw] lg:min-w-[30vw] snap-center group">
                             {/* Image Container */}
-                            <div className="relative aspect-[4/3] mb-6 overflow-hidden bg-white/5">
+                            <div className="relative aspect-[4/3] mb-6 overflow-hidden bg-white/5 border border-white/10">
                                 <Image
                                     src={project.image}
                                     alt={project.title}
@@ -55,7 +55,7 @@ export function Portfolio() {
                             </div>
 
                             {/* Content */}
-                            <div>
+                            <div className="pr-4">
                                 <span className="block font-mono text-xs text-aurora-orange/60 mb-2">
                                     /{project.id}
                                 </span>
@@ -68,6 +68,9 @@ export function Portfolio() {
                             </div>
                         </div>
                     ))}
+
+                    {/* Spacer for padding at the end */}
+                    <div className="min-w-[5vw]" />
                 </div>
 
             </Container>

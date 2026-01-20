@@ -24,35 +24,28 @@ export function Process() {
                     </h2>
                 </div>
 
-                {/* Industrial Manifest Grid - Raw & Technical */}
-                <div className="border-t border-aurora-black/20">
-                    {steps.map((step, i) => (
-                        <div key={step.id} className="group grid grid-cols-1 md:grid-cols-12 gap-8 py-12 border-b border-aurora-black/20 hover:bg-white transition-colors duration-300">
+                {/* Clean Industrial List */}
+                <div className="border-t border-aurora-black/10">
+                    {steps.map((step) => (
+                        <div key={step.id} className="grid grid-cols-1 md:grid-cols-12 gap-8 py-10 border-b border-aurora-black/10 items-start hover:bg-white/50 transition-colors">
 
-                            {/* Step Number */}
+                            {/* Number */}
                             <div className="col-span-1 md:col-span-2">
-                                <span className="font-display text-4xl text-aurora-orange/60 group-hover:text-aurora-orange transition-colors">
-                                    {step.id}
+                                <span className="font-mono text-xs text-aurora-orange/80 uppercase tracking-widest">
+                                    /{step.id}
                                 </span>
                             </div>
 
                             {/* Title */}
                             <div className="col-span-1 md:col-span-4">
-                                <h3 className="font-display font-medium text-3xl uppercase text-aurora-black mb-2">
+                                <h3 className="font-display font-medium text-2xl uppercase text-aurora-black">
                                     {step.title}
                                 </h3>
-                                {/* Decorative 'Status' badge */}
-                                <div className="inline-flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-aurora-black/20 group-hover:bg-aurora-orange transition-colors" />
-                                    <span className="font-mono text-[10px] uppercase text-aurora-black/40 tracking-widest">
-                                        System_Check_OK
-                                    </span>
-                                </div>
                             </div>
 
-                            {/* Description - Technical look */}
-                            <div className="col-span-1 md:col-span-6 border-l border-aurora-black/10 md:pl-8">
-                                <p className="font-mono text-gray-600 leading-relaxed max-w-md my-4 md:my-0">
+                            {/* Description */}
+                            <div className="col-span-1 md:col-span-6">
+                                <p className="font-mono text-sm text-aurora-black/60 leading-relaxed max-w-lg">
                                     {step.desc}
                                 </p>
                             </div>
