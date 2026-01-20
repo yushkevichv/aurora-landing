@@ -1,9 +1,9 @@
+'use client';
 
 import { Container } from '@/components/ui/container';
 import { Section } from '@/components/ui/section';
 import { Button } from '@/components/ui/button';
-
-import Image from 'next/image'; // Added Image import
+import Image from 'next/image';
 
 const projects = [
     {
@@ -70,15 +70,6 @@ export function Portfolio() {
                     ))}
                 </div>
 
-                <div className="mt-16 text-center">
-                    <Button
-                        variant="outline"
-                        className="border-aurora-white/20 text-white hover:bg-white hover:text-black hover:border-white"
-                        onClick={() => document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' })}
-                    >
-                        Запросить полный референс-лист
-                    </Button>
-                </div>
             </Container>
         </Section>
     );
