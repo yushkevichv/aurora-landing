@@ -8,88 +8,81 @@ import Image from 'next/image';
 
 export function Contacts() {
     return (
-        <Section id="contacts" className="bg-aurora-orange relative overflow-hidden pt-24 pb-12 flex flex-col justify-between min-h-screen text-aurora-black selection:bg-black selection:text-white">
-
-            {/* Background Grain */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none mix-blend-multiply bg-[url('/img/noise-texture.png')]" />
-
-            <Container className="relative z-10 flex-1 flex flex-col">
-
+        <Section id="contacts" className="bg-aurora-concrete text-aurora-black pt-24 pb-12">
+            <Container>
                 {/* Header */}
-                <div className="border-b-4 border-aurora-black pb-8 mb-16">
-                    <h2 className="font-display font-medium text-[3rem] md:text-[5rem] leading-[0.9] uppercase tracking-tighter text-aurora-black">
-                        Рассчитать <br />
-                        Проект
+                <div className="mb-16">
+                    <p className="font-mono text-xs uppercase tracking-widest text-aurora-orange mb-2">/ Контакты</p>
+                    <h2 className="font-display text-4xl md:text-5xl uppercase text-aurora-black">
+                        Рассчитать <br /> Проект
                     </h2>
                 </div>
 
-                {/* Content Grid: Form & Contacts */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 mb-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
 
-                    {/* LEFT: FORM */}
-                    <div className="bg-aurora-black p-8 md:p-12 text-aurora-white shadow-2xl">
-                        <form className="space-y-6">
-                            <div>
-                                <label className="block font-mono text-xs uppercase tracking-widest mb-2 text-aurora-orange">Ваше имя</label>
-                                <input type="text" className="w-full bg-transparent border-b border-aurora-white/20 py-3 focus:outline-none focus:border-aurora-orange transition-colors font-display text-xl uppercase" placeholder="Иван Иванов" />
+                    {/* LEFT: FORM (Clean White Card) */}
+                    <div className="lg:col-span-7 bg-white p-8 md:p-12 shadow-sm border border-gray-200">
+                        <form className="space-y-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <label className="block font-mono text-xs uppercase tracking-widest mb-3 text-gray-500">Ваше имя</label>
+                                    <input type="text" className="w-full bg-gray-50 border border-gray-200 p-4 focus:outline-none focus:border-aurora-orange transition-colors font-display text-lg uppercase" placeholder="Иван Иванов" />
+                                </div>
+                                <div>
+                                    <label className="block font-mono text-xs uppercase tracking-widest mb-3 text-gray-500">Телефон</label>
+                                    <input type="tel" className="w-full bg-gray-50 border border-gray-200 p-4 focus:outline-none focus:border-aurora-orange transition-colors font-display text-lg uppercase" placeholder="+7 (999) 000-00-00" />
+                                </div>
                             </div>
                             <div>
-                                <label className="block font-mono text-xs uppercase tracking-widest mb-2 text-aurora-orange">Телефон</label>
-                                <input type="tel" className="w-full bg-transparent border-b border-aurora-white/20 py-3 focus:outline-none focus:border-aurora-orange transition-colors font-display text-xl uppercase" placeholder="+7 (999) 000-00-00" />
-                            </div>
-                            <div>
-                                <label className="block font-mono text-xs uppercase tracking-widest mb-2 text-aurora-orange">Комментарий</label>
-                                <textarea rows={2} className="w-full bg-transparent border-b border-aurora-white/20 py-3 focus:outline-none focus:border-aurora-orange transition-colors font-mono text-sm" placeholder="Опишите задачу..." />
+                                <label className="block font-mono text-xs uppercase tracking-widest mb-3 text-gray-500">Комментарий</label>
+                                <textarea rows={4} className="w-full bg-gray-50 border border-gray-200 p-4 focus:outline-none focus:border-aurora-orange transition-colors font-mono text-sm" placeholder="Опишите задачу..." />
                             </div>
 
-
-                            <Button className="w-full bg-aurora-orange text-aurora-black hover:bg-white hover:text-black">
+                            <Button className="w-full md:w-auto px-12 bg-aurora-orange text-white hover:bg-black transition-colors">
                                 Отправить заявку
                             </Button>
                         </form>
                     </div>
 
-                    {/* RIGHT: INFO */}
-                    <div className="flex flex-col justify-between">
+                    {/* RIGHT: INFO (Clean Typography) */}
+                    <div className="lg:col-span-5 flex flex-col justify-between">
                         <div className="space-y-12">
-                            <div className="group cursor-pointer">
-                                <p className="font-mono text-sm font-bold uppercase tracking-widest mb-2 opacity-80 text-aurora-black">Почта</p>
-                                <a href="mailto:105@td-avrora.ru" className="font-display text-3xl md:text-5xl uppercase hover:underline decoration-4 underline-offset-8 text-aurora-black block break-all">
+                            <div>
+                                <p className="font-mono text-xs text-aurora-orange uppercase tracking-widest mb-2">Почта</p>
+                                <a href="mailto:105@td-avrora.ru" className="font-display text-3xl hover:text-aurora-orange transition-colors">
                                     105@td-avrora.ru
                                 </a>
                             </div>
 
-                            <div className="group cursor-pointer">
-                                <p className="font-mono text-sm font-bold uppercase tracking-widest mb-2 opacity-80 text-aurora-black">Телефон</p>
-                                <a href="tel:89006476606" className="font-display text-3xl md:text-5xl uppercase hover:underline decoration-4 underline-offset-8 text-aurora-black">
+                            <div>
+                                <p className="font-mono text-xs text-aurora-orange uppercase tracking-widest mb-2">Телефон</p>
+                                <a href="tel:89006476606" className="font-display text-3xl hover:text-aurora-orange transition-colors">
                                     8 (900) 647-66-06
                                 </a>
                             </div>
-                        </div>
 
-                        <div className="font-mono text-lg md:text-xl leading-relaxed mt-12 text-aurora-black font-medium">
-                            <p className="mb-8">
-                                <strong>Офис:</strong><br />
-                                Санкт-Петербург, Ул. Губина д.16А, помещ. 68
-                            </p>
-                            <p>
-                                <strong>Производство:</strong><br />
-                                Санкт-Петербург, ул. Челябинская 160
-                            </p>
+                            <div className="pt-8 border-t border-gray-200">
+                                <div className="mb-8">
+                                    <strong className="block font-display text-lg uppercase mb-2">Офис</strong>
+                                    <p className="font-mono text-gray-600">Санкт-Петербург, Ул. Губина д.16А, помещ. 68</p>
+                                </div>
+                                <div>
+                                    <strong className="block font-display text-lg uppercase mb-2">Производство</strong>
+                                    <p className="font-mono text-gray-600">Санкт-Петербург, ул. Челябинская 160</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Giant Footer Links */}
-                <div className="flex flex-col md:flex-row justify-between items-end border-t-4 border-aurora-black pt-8 mt-24 text-aurora-black">
-                    <div className="flex gap-8 font-mono text-sm uppercase tracking-widest font-bold">
-                        <a href="#" className="hover:bg-aurora-black hover:text-aurora-orange px-2 py-1 transition-colors border border-transparent hover:border-aurora-black">Telegram</a>
-                        <a href="#" className="hover:bg-aurora-black hover:text-aurora-orange px-2 py-1 transition-colors border border-transparent hover:border-aurora-black">WhatsApp</a>
-                        <a href="#" className="hover:bg-aurora-black hover:text-aurora-orange px-2 py-1 transition-colors border border-transparent hover:border-aurora-black">ВКонтакте</a>
+                {/* Footer */}
+                <div className="mt-24 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center text-sm font-mono text-gray-500 uppercase tracking-widest">
+                    <div className="flex gap-6 mb-4 md:mb-0">
+                        <a href="#" className="hover:text-aurora-orange transition-colors">Telegram</a>
+                        <a href="#" className="hover:text-aurora-orange transition-colors">WhatsApp</a>
+                        <a href="#" className="hover:text-aurora-orange transition-colors">ВКонтакте</a>
                     </div>
-                    <div className="text-right mt-8 md:mt-0">
-                        <p className="font-mono text-xs uppercase tracking-widest opacity-80 font-bold">© ЗМК АВРОРА 2008-2025</p>
-                    </div>
+                    <p>© ЗМК АВРОРА 2008-2025</p>
                 </div>
             </Container>
         </Section>

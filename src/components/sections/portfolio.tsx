@@ -1,11 +1,8 @@
-'use client';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Container } from '@/components/ui/container';
 import { Section } from '@/components/ui/section';
 import { Button } from '@/components/ui/button';
-import { ArrowUpRight } from 'lucide-react';
+
 import Image from 'next/image'; // Added Image import
 
 const projects = [
@@ -30,68 +27,57 @@ const projects = [
 ];
 
 export function Portfolio() {
-    const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-
     return (
-        <Section id="portfolio" className="bg-aurora-black py-32 z-20 relative">
+        <Section id="portfolio" className="bg-aurora-black py-24 text-aurora-white">
             <Container>
-                <div className="flex flex-col md:flex-row justify-between items-end mb-24">
-                    <h2 className="text-4xl md:text-6xl font-display font-medium uppercase leading-[0.9]">
-                        Наши <br />
-                        <span className="text-aurora-orange">Проекты</span>
-                    </h2>
-                    <div className="text-right hidden md:block">
-                        <p className="text-aurora-white/60 font-mono text-sm max-w-xs mb-8">
-                            МЫ СОЗДАЕМ ОБЪЕКТЫ, КОТОРЫЕ ФОРМИРУЮТ ЛАНДШАФТ ПРОМЫШЛЕННОСТИ.
-                        </p>
-                        <Button variant="outline">Смотреть все кейсы</Button>
+                <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+                    <div>
+                        <p className="font-mono text-xs uppercase tracking-widest text-aurora-orange mb-2">/ Объекты</p>
+                        <h2 className="text-4xl md:text-5xl font-display uppercase font-medium">
+                            Наши <span className="text-aurora-orange">Проекты</span>
+                        </h2>
                     </div>
                 </div>
 
-                {/* Project Grid */}
-                <div className="flex flex-col gap-8 md:gap-12">
-                    {projects.map((project, i) => (
-                        <motion.div
-                            key={project.id}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: i * 0.1 }}
-                            className="group relative border-t border-aurora-white/20 pt-8 md:pt-12"
-                        >
-                            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-                                {/* ID */}
-                                <div className="col-span-1 md:col-span-1">
-                                    <span className="font-mono text-xs text-aurora-orange uppercase tracking-widest">
-                                        /{project.id}
-                                    </span>
-                                </div>
-
-                                {/* Title & Info */}
-                                <div className="col-span-1 md:col-span-4 z-10">
-                                    <h3 className="font-display font-medium text-3xl md:text-5xl uppercase text-aurora-white mb-4 group-hover:text-aurora-orange transition-colors duration-300">
-                                        {project.title}
-                                    </h3>
-                                </div>
-
-                                {/* IMAGE */}
-                                <div className="col-span-1 md:col-span-7 relative h-[300px] md:h-[400px] overflow-hidden bg-aurora-white/5 grayscale group-hover:grayscale-0 transition-all duration-700 ease-out">
-                                    <Image
-                                        src={project.image}
-                                        alt={project.title}
-                                        fill
-                                        className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-aurora-black/80 to-transparent opacity-60" />
-                                    <div className="absolute bottom-6 left-6 right-6">
-                                        <p className="font-mono text-sm md:text-base text-aurora-white leading-relaxed max-w-lg">
-                                            {project.desc}
-                                        </p>
-                                    </div>
-                                </div>
+                {/* Classic Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                    {projects.map((project) => (
+                        <div key={project.id} className="group">
+                            {/* Image Container */}
+                            <div className="relative aspect-[4/3] mb-6 overflow-hidden bg-white/5">
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
                             </div>
-                        </motion.div>
+
+                            {/* Content */}
+                            <div>
+                                <span className="block font-mono text-xs text-aurora-orange/60 mb-2">
+                                    /{project.id}
+                                </span>
+                                <h3 className="font-display text-2xl uppercase mb-3 text-white group-hover:text-aurora-orange transition-colors">
+                                    {project.title}
+                                </h3>
+                                <p className="font-mono text-sm text-aurora-white/60 leading-relaxed">
+                                    {project.desc}
+                                </p>
+                            </div>
+                        </div>
                     ))}
+                </div>
+
+                <div className="mt-16 text-center">
+                    <Button
+                        variant="outline"
+                        className="border-aurora-white/20 text-white hover:bg-white hover:text-black hover:border-white"
+                        onClick={() => document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' })}
+                    >
+                        Запросить полный референс-лист
+                    </Button>
                 </div>
             </Container>
         </Section>

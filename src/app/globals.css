@@ -2,16 +2,18 @@
 
 @theme {
   --color-aurora-orange: #FF4500;
-  --color-aurora-black: #050505;
-  --color-aurora-gray: #1A1A1A;
+  --color-aurora-black: #1A1A1A;
+  /* Softened from #050505 */
+  --color-aurora-gray: #2A2A2A;
+  --color-aurora-concrete: #F5F5F5;
   --color-aurora-white: #E0E0E0;
-  
+
   --font-display: var(--font-oswald);
   --font-mono: var(--font-jetbrains-mono);
 }
 
 :root {
-  --background: #050505;
+  --background: #1A1A1A;
   --foreground: #E0E0E0;
 }
 

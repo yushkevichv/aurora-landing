@@ -31,11 +31,9 @@ export default function RootLayout({
       <body
         className={`${oswald.variable} ${jetbrainsMono.variable} antialiased bg-[#050505] text-[#E0E0E0] selection:bg-[#FF4500] selection:text-white`}
       >
-        {/* Helper component for smooth scrolling */}
-        <ReactLenis root>
-          <Noise />
-          {children}
-        </ReactLenis>
+        {/* Standard scrolling as per V4 request */}
+        <Noise />
+        {children}
       </body>
     </html>
   );

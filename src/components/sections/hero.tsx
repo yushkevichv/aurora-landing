@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+
 import { Container } from '@/components/ui/container';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
@@ -30,76 +30,40 @@ export function Hero() {
 
             <Container className="relative z-10 flex-1 flex flex-col justify-between">
 
-                {/* TOP BAR INFO - Minimal */}
+                {/* TOP BAR INFO */}
                 <div className="flex justify-between items-start border-t border-aurora-white/20 pt-6">
-                    <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5 }}
-                        className="hidden md:block"
-                    >
+                    <div className="hidden md:block">
                         <p className="font-mono text-xs text-aurora-orange uppercase tracking-widest mb-1">Завод</p>
                         <p className="font-display font-bold text-xl text-white">МЕТАЛЛОКОНСТРУКЦИЙ</p>
-                    </motion.div>
-
-                    {/* Removed English/Redundant Info */}
-                    <div>
-                        {/* Empty for balance or remove div entirely if not needed */}
                     </div>
                 </div>
 
-                {/* CENTER MONOLITH TITLE */}
-                <div className="relative flex flex-col items-center justify-center flex-1 my-12">
-                    <motion.h1
-                        initial={{ opacity: 0, scale: 0.9, letterSpacing: "1em" }}
-                        animate={{ opacity: 1, scale: 1, letterSpacing: "0em" }}
-                        transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                        className="font-display font-bold text-[16vw] leading-[0.8] text-white uppercase text-center mix-blend-overlay"
-                    >
+                {/* CENTER HERO TEXT - CLEAN & READABLE */}
+                <div className="relative flex flex-col items-start justify-center flex-1 my-12">
+                    <h1 className="font-display font-bold text-[12vw] md:text-[8rem] leading-[0.9] text-white uppercase text-left">
                         АВРОРА
-                    </motion.h1>
+                    </h1>
 
-                    {/* Overlapping Solid Text for readability/effect */}
-                    <motion.h1
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5, duration: 1 }}
-                        className="absolute font-display font-bold text-[16vw] leading-[0.8] text-transparent text-stroked uppercase text-center pointer-events-none"
-                        aria-hidden="true"
-                    >
-                        АВРОРА
-                    </motion.h1>
-
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1.2 }}
-                        className="mt-6 font-mono text-sm md:text-base text-aurora-white/80 text-center max-w-lg leading-relaxed"
-                    >
+                    <p className="mt-8 font-mono text-base md:text-lg text-aurora-white/80 max-w-xl leading-relaxed">
                         Металлоконструкции, которые приносят вашему бизнесу прибыль, а не проблемы.
-                    </motion.p>
+                        <br />
+                        <span className="text-aurora-white/40 text-sm mt-4 block">
+                            Проектирование. Производство. Монтаж.
+                        </span>
+                    </p>
                 </div>
 
                 {/* BOTTOM CONTROLS */}
-                <div className="flex flex-col md:flex-row justify-between items-end gap-8">
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 1.5 }}
-                    >
-                        <Button variant="primary" size="lg" className="rounded-none px-12 h-16 text-lg tracking-widest">
+                <div className="flex flex-col md:flex-row justify-between items-end gap-8 text-white">
+                    <div>
+                        <Button variant="primary" size="lg" className="rounded-none px-12 h-16 text-lg tracking-widest bg-aurora-orange text-black hover:bg-white">
                             РАССЧИТАТЬ СМЕТУ
                         </Button>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1.8 }}
-                        className="flex flex-col items-center gap-4 text-aurora-white/40"
-                    >
+                    <div className="flex flex-col items-center gap-4 text-aurora-white/40">
                         <ArrowDown className="animate-bounce" />
-                    </motion.div>
+                    </div>
                 </div>
             </Container>
         </Section>

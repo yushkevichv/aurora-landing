@@ -31,7 +31,7 @@ export function Header() {
 
                 {/* DESKTOP NAV */}
                 <nav className="hidden md:flex items-center gap-8">
-                    {['О заводе', 'Процесс', 'Портфолио', 'Контакты'].map((item, i) => {
+                    {['О заводе', 'Процесс', 'Проекты', 'Контакты'].map((item, i) => {
                         const href = ['#about', '#process', '#portfolio', '#contacts'][i];
                         return (
                             <a

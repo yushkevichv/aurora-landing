@@ -1,7 +1,6 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { Container } from '@/components/ui/container';
 import { Section } from '@/components/ui/section';
 
 const steps = [
@@ -14,55 +13,42 @@ const steps = [
 ];
 
 export function Process() {
-    const targetRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: targetRef,
-    });
-
-    const x = useTransform(scrollYProgress, [0, 1], ["1%", "-75%"]);
-
     return (
-        <section ref={targetRef} id="process" className="relative h-[300vh] bg-aurora-black">
-            <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-
+        <Section id="process" className="py-24 bg-aurora-concrete text-aurora-black">
+            <Container>
                 {/* SECTION LABEL */}
-                <div className="absolute top-12 left-12 z-20">
+                <div className="mb-16">
                     <p className="font-mono text-xs uppercase tracking-widest text-aurora-orange mb-2">/ Процесс</p>
-                    <h2 className="font-display text-4xl text-white uppercase">Производственный цикл</h2>
+                    <h2 className="font-display text-4xl md:text-5xl uppercase text-aurora-black">
+                        Производственный <br /> Цикл
+                    </h2>
                 </div>
 
-                <motion.div style={{ x }} className="flex gap-0">
-                    {/* Intro Block */}
-                    <div className="w-[40vw] h-[60vh] shrink-0 flex items-center justify-center border-r border-aurora-white/10 ml-[10vw]">
-                        <span className="text-aurora-white/20 font-display text-8xl uppercase rotate-90">СТАРТ</span>
-                    </div>
-
+                {/* Vertical Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {steps.map((step) => (
-                        <div key={step.id} className="w-[60vw] h-[60vh] shrink-0 border-r border-aurora-white/10 flex flex-col justify-between p-12 md:p-24 relative hover:bg-aurora-white/5 transition-colors group">
+                        <div key={step.id} className="group bg-white p-8 border border-gray-200 hover:border-aurora-orange/50 transition-colors shadow-sm hover:shadow-lg">
                             {/* Number */}
-                            <span className="font-display font-medium text-[10rem] md:text-[15rem] leading-none text-aurora-white/5 group-hover:text-aurora-orange/20 transition-colors">
+                            <span className="block font-mono text-xs text-aurora-orange uppercase tracking-widest mb-4">
                                 {step.id}
                             </span>
 
-                            {/* Content */}
-                            <div className="relative z-10">
-                                <h3 className="font-display font-bold text-4xl md:text-6xl uppercase text-white mb-6">
-                                    {step.title}
-                                </h3>
-                                <div className="w-24 h-[1px] bg-aurora-orange mb-6" />
-                                <p className="font-mono text-lg text-aurora-white/60 max-w-sm">
-                                    {step.desc}
-                                </p>
-                            </div>
+                            {/* Title */}
+                            <h3 className="font-display font-bold text-2xl uppercase text-aurora-black mb-4">
+                                {step.title}
+                            </h3>
+
+                            {/* Divider */}
+                            <div className="w-12 h-[2px] bg-gray-200 group-hover:bg-aurora-orange transition-colors mb-4" />
+
+                            {/* Desc */}
+                            <p className="font-mono text-sm text-gray-600 leading-relaxed">
+                                {step.desc}
+                            </p>
                         </div>
                     ))}
-
-                    {/* Outro Block */}
-                    <div className="w-[40vw] h-[60vh] shrink-0 flex items-center justify-center">
-                        <span className="text-aurora-orange font-display text-8xl uppercase rotate-90">СДАЧА</span>
-                    </div>
-                </motion.div>
-            </div>
-        </section>
+                </div>
+            </Container>
+        </Section>
     );
 }
