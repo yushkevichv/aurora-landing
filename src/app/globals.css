@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
+:root {
+  --color-primary: #FF3D00;
+  --background: #0A0A0A;
+  --foreground: #F5F5F5;
+}
+
 @theme {
-  --color-aurora-orange: #FF3D00;
-  /* Molten Orange */
+  --color-aurora-orange: color-mix(in oklab, var(--color-primary) 75%, transparent);
+  /* Molten Orange with transparency mix */
   --color-aurora-black: #050505;
   /* Void Black */
   --color-aurora-gray: #151515;
@@ -17,11 +23,6 @@
   --font-mono: var(--font-jetbrains-mono);
 }
 
-:root {
-  --background: #0A0A0A;
-  --foreground: #F5F5F5;
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
@@ -29,6 +30,10 @@ body {
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+button {
+  cursor: pointer;
 }
 
 /* CUSTOM UTILITIES */
@@ -77,8 +82,17 @@ body {
   100% { transform: translateY(200%); }
 }
 
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .animate-slide-down {
   animation: slide-down 2s infinite ease-in-out;
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
 }
 
 .marquee-container {

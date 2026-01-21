@@ -81,7 +81,13 @@ export function Portfolio() {
                     <p className="font-display text-3xl md:text-4xl uppercase text-white/60 max-w-xl">
                         Готовы обсудить <span className="text-white">ваш следующий проект?</span>
                     </p>
-                    <Button className="bg-aurora-orange text-black font-display font-medium text-xl uppercase tracking-widest px-12 py-8 rounded-none hover:bg-white transition-all duration-500 shadow-[8px_8px_0px_0px_rgba(255,61,0,0.2)] hover:shadow-none">
+                    <Button 
+                        className="bg-aurora-orange text-white font-display font-medium text-xl uppercase tracking-widest px-12 py-8 rounded-none hover:bg-white transition-all duration-500 shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)] hover:shadow-none cursor-pointer"
+                        onClick={() => {
+                            const el = document.querySelector('#contacts');
+                            if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                    >
                         Обсудить проект
                     </Button>
                 </div>

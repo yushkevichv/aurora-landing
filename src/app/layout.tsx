@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body
-        className={`${oswald.variable} ${jetbrainsMono.variable} antialiased bg-[#050505] text-[#E0E0E0] selection:bg-[#FF4500] selection:text-white`}
+        className={`${oswald.variable} ${jetbrainsMono.variable} antialiased bg-aurora-black text-white selection:bg-aurora-orange selection:text-white`}
       >
         {/* Standard scrolling as per V4 request */}
         <Noise />

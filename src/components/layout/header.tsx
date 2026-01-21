@@ -17,22 +17,29 @@ export function Header() {
     return (
         <>
             {/* TOP LEFT: LOGO */}
-            <div className="fixed top-8 left-8 z-50 mix-blend-difference">
+            <div className="fixed top-4 left-4 md:top-8 md:left-8 z-50 mix-blend-difference">
                 <Link href="/" className="group block">
                     <Image
-                        src="/logo.png"
+                        src="/img/logo.svg"
                         alt="ЗМК АВРОРА"
                         width={180}
                         height={60}
-                        className="w-auto h-12 md:h-16 object-contain brightness-0 invert"
+                        className="w-auto h-8 md:h-16 object-contain"
                     />
                 </Link>
             </div>
 
             {/* TOP RIGHT: MENU TRIGGER (HAMBURGER REPLACEMENT) */}
-            <div className="fixed top-8 right-8 z-50 mix-blend-difference">
-                <Button variant="ghost" className="text-white font-mono text-xs uppercase tracking-widest border border-white/20 hover:bg-white hover:text-black hover:border-white transition-colors h-10 px-6 rounded-none">
-                    <a href="#contacts">КОНТАКТЫ</a>
+            <div className="fixed bottom-4 right-4 md:top-8 md:right-8 z-50 mix-blend-difference">
+                <Button 
+                    variant="ghost" 
+                    className="text-white font-mono text-[10px] md:text-xs uppercase tracking-widest border border-white/20 hover:bg-white hover:text-black hover:border-white transition-colors h-10 md:h-10 px-6 md:px-6 rounded-none cursor-pointer bg-black/20 backdrop-blur-sm md:bg-transparent md:backdrop-blur-none"
+                    onClick={(e) => {
+                        const el = document.querySelector('#contacts');
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                >
+                    КОНТАКТЫ
                 </Button>
             </div>
 

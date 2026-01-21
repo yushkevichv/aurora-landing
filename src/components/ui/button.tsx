@@ -16,10 +16,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, variant = 'primary', size = 'md', children, ...props }, ref) => {
 
         // Base styles: uppercase, tracking, geometric
-        const baseStyles = 'inline-flex items-center justify-center font-display font-medium uppercase tracking-wider transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:pointer-events-none border-2';
+        const baseStyles = 'inline-flex items-center justify-center font-display font-medium uppercase tracking-wider transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:pointer-events-none border-2 cursor-pointer';
 
         const variants = {
-            primary: 'bg-aurora-orange border-aurora-orange text-white hover:bg-orange-600 hover:border-orange-600 shadow-[0_0_15px_rgba(255,69,0,0.3)] hover:shadow-[0_0_25px_rgba(255,69,0,0.6)]',
+            primary: 'bg-aurora-orange border-aurora-orange text-white hover:bg-white hover:text-black transition-all duration-500 shadow-[8px_8px_0px_0px_rgba(255,61,0,0.1)] hover:shadow-none',
             outline: 'bg-transparent border-aurora-gray text-aurora-white hover:border-aurora-orange hover:text-aurora-orange',
             ghost: 'bg-transparent border-transparent text-aurora-white/70 hover:text-aurora-orange',
         };

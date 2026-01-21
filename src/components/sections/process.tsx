@@ -53,10 +53,10 @@ export function Process() {
 
                             {/* Content */}
                             <div>
-                                <h3 className="font-display text-2xl uppercase mb-4 text-aurora-black group-hover:translate-x-2 transition-transform duration-500">
+                                <h3 className="font-display text-2xl uppercase mb-4 text-aurora-black group-hover:text-black group-hover:translate-x-2 transition-all duration-500">
                                     {step.title}
                                 </h3>
-                                <p className="font-mono text-sm text-gray-400 leading-relaxed">
+                                <p className="font-mono text-sm text-gray-400 group-hover:text-black/80 leading-relaxed transition-colors duration-500">
                                     {step.desc}
                                 </p>
                             </div>
