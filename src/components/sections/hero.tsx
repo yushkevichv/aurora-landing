@@ -49,7 +49,7 @@ export function Hero() {
                     {/* CENTER */}
                     <div className="col-span-12 md:col-span-8 flex flex-col justify-center items-center text-center">
                         <div className="relative z-30">
-                            <h2 className="font-display font-bold text-6xl md:text-[10rem] w-full uppercase leading-[0.75] tracking-tighter mb-8 drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+                            <h2 className="font-display font-bold text-4xl sm:text-6xl md:text-[10rem] w-full uppercase leading-[0.75] tracking-tighter mb-8 drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
                                 ЗАВОД <br />
                                 <span className="text-aurora-orange">МЕТАЛЛО</span><br />
                                 <span className="text-white">КОНСТРУКЦИЙ</span>
@@ -57,14 +57,7 @@ export function Hero() {
                         </div>
 
                         <div className="flex flex-col items-center gap-8 mt-12 relative z-30">
-                            <div className="flex items-center gap-4">
-                                <span className="w-12 h-[1px] bg-aurora-orange"></span>
-                                <p className="font-mono text-xs md:text-sm text-white/60 uppercase tracking-[0.4em]">
-                                    since 2008 / saint-petersburg
-                                </p>
-                                <span className="w-12 h-[1px] bg-aurora-orange"></span>
-                            </div>
-                            <p className="font-display text-xl md:text-3xl text-white/80 max-w-2xl text-center uppercase tracking-tight leading-tight">
+                            <p className="font-display text-lg sm:text-xl md:text-3xl text-white/80 max-w-2xl text-center uppercase tracking-tight leading-tight px-4">
                                 Проектируем и производим <br /> 
                                 <span className="text-white font-bold">несущие конструкции</span> для лидеров рынка
                             </p>
@@ -105,4 +98,3 @@ export function Hero() {
         </Section>
     );
 }
-// Cleaned end of file

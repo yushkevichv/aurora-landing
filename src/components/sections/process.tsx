@@ -20,13 +20,13 @@ export function Process() {
 
             <Container className="relative z-10">
                 {/* HEADLINE */}
-                <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12 pt-12 md:pt-0">
                     <div className="max-w-2xl">
                         <p className="font-mono text-xs uppercase tracking-[0.3em] text-aurora-orange mb-6 flex items-center gap-4">
                             <span className="w-8 h-[1px] bg-aurora-orange"></span>
                             / Производство
                         </p>
-                        <h2 className="font-display text-[3.5rem] md:text-[5.5rem] uppercase text-aurora-black leading-[0.9] tracking-tight">
+                        <h2 className="font-display text-[2.5rem] sm:text-[3.5rem] md:text-[5.5rem] uppercase text-aurora-black leading-[0.9] tracking-tight">
                             Технологический <br /> <span className="text-black/20">Процесс</span>
                         </h2>
                     </div>
@@ -40,14 +40,14 @@ export function Process() {
                 {/* STEPS GRID */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     {steps.map((step) => (
-                        <div key={step.id} className="group relative p-10 border-b border-r border-black/5 hover:bg-white transition-all duration-500">
+                        <div key={step.id} className="group relative p-8 md:p-10 border-b border-r border-black/5 hover:bg-white transition-all duration-500">
                             {/* Number Overlay */}
                             <div className="absolute top-8 right-8 font-display text-4xl text-black/5 group-hover:text-aurora-orange/10 transition-colors duration-500">
                                 /{step.id}
                             </div>
                             
                             {/* Icon */}
-                            <div className="mb-10 text-aurora-black group-hover:text-aurora-orange transition-colors duration-500">
+                            <div className="mb-6 md:mb-10 text-aurora-black group-hover:text-aurora-orange transition-colors duration-500">
                                 <step.icon size={32} strokeWidth={1.2} />
                             </div>
 

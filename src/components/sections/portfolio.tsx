@@ -32,13 +32,13 @@ export function Portfolio() {
             <div className="absolute inset-0 pattern-grid-dark opacity-30" />
             
             <Container className="relative z-10">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12 pt-12 md:pt-0">
                     <div className="max-w-2xl">
                         <p className="font-mono text-xs uppercase tracking-[0.3em] text-aurora-orange mb-6 flex items-center gap-4">
                             <span className="w-8 h-[1px] bg-aurora-orange"></span>
                             / Портфолио
                         </p>
-                        <h2 className="text-[3.5rem] md:text-[5.5rem] font-display uppercase font-medium leading-[0.9] tracking-tight">
+                        <h2 className="text-[2.5rem] sm:text-[3.5rem] md:text-[5.5rem] font-display uppercase font-medium leading-[0.9] tracking-tight">
                             Наши <br /><span className="text-white/20">Знаковые</span> <span className="text-aurora-orange">Объекты</span>
                         </h2>
                     </div>

@@ -30,12 +30,12 @@ export function About() {
             
             <Container ref={containerRef} className="relative z-10">
                 {/* 1. EDITORIAL HEADLINE */}
-                <div className="mb-24">
+                <div className="mb-24 pt-12 md:pt-0">
                     <p className="font-mono text-xs uppercase tracking-[0.3em] text-aurora-orange mb-6 flex items-center gap-4">
                         <span className="w-8 h-[1px] bg-aurora-orange"></span>
                         / О компании
                     </p>
-                    <h2 className="font-display font-medium text-[3.5rem] md:text-[6rem] leading-[0.9] uppercase max-w-4xl tracking-tight">
+                    <h2 className="font-display font-medium text-[2.5rem] sm:text-[3.5rem] md:text-[6rem] leading-[0.9] uppercase max-w-4xl tracking-tight">
                         Архитекторы <br />
                         <span className="text-white/20">индустриального</span> <br />
                         <span className="text-aurora-orange">роста.</span>
