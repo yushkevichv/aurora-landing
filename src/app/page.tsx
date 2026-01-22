@@ -30,7 +30,6 @@ export default function Home() {
               
               <div className="flex flex-col md:flex-row items-start gap-8">
                 <div className="flex flex-col gap-2">
-                  <p className="font-mono text-[8px] uppercase tracking-widest text-white/30 mb-2">Разработка сайта</p>
                   <Image 
                     src="/img/pugofka.svg" 
                     alt="Pugofka" 
@@ -41,7 +40,7 @@ export default function Home() {
                 </div>
                 <div className="space-y-4 font-mono text-[9px] md:text-[10px] uppercase tracking-[0.2em] leading-relaxed text-white/50 max-w-4xl">
                   <p>
-                    © 2008-2026 ЗМК АВРОРА // Все права защищены. Копирование информации преследуется по закону. Статья 146 УК РФ.
+                    Все права защищены. Копирование информации преследуется по закону. Статья 146 УК РФ.
                   </p>
                   <p>
                     Вся информация на сайте носит ИСКЛЮЧИТЕЛЬНО ознакомительный характер и может отличаться от официальных источников. Просьба запрашивать информацию у Вашего персонального менеджера.

@@ -51,9 +51,6 @@ export function Header() {
                         ПРОИЗВОДСТВО: АКТИВНО
                     </span>
                 </div>
-                <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest">
-                    САНКТ-ПЕТЕРБУРГ / 2025
-                </span>
             </div>
 
             {/* RIGHT SIDE: VERTICAL NAV (OPTIONAL OR HUD) */}
