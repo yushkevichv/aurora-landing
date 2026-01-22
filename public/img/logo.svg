@@ -9,5 +9,5 @@
   <rect x="168" y="172" width="20" height="20" fill="#575656"/>
   
   <!-- Текстовая часть (ЗМК АВРОРА) -->
-  <text x="360" y="180" fill="white" font-family="Arial Black, sans-serif" font-weight="900" font-size="140" style="text-transform: uppercase; letter-spacing: -0.04em;">ЗМК АВРОРА</text>
+  <text x="350" y="175" fill="white" font-family="Oswald, Arial, sans-serif" font-weight="700" font-size="115" style="text-transform: uppercase; letter-spacing: 0.02em;">ЗМК АВРОРА</text>
 </svg>
