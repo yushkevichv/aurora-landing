@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Oswald, JetBrains_Mono } from "next/font/google"; // Industrial & Tech fonts
 import "./globals.css";
-import { ReactLenis } from "@/components/lenis-provider";
 import { Noise } from "@/components/ui/noise";
 
 const oswald = Oswald({
@@ -31,15 +30,8 @@ export default function RootLayout({
       <body
         className={`${oswald.variable} ${jetbrainsMono.variable} antialiased bg-aurora-black text-white selection:bg-aurora-orange selection:text-white`}
       >
-        <ReactLenis root options={{ 
-          lerp: 0.12, 
-          duration: 1.2, 
-          smoothWheel: true,
-          syncTouch: false, // Use native touch for better performance on old devices
-        }}>
-          <Noise />
-          {children}
-        </ReactLenis>
+        <Noise />
+        {children}
       </body>
     </html>
   );

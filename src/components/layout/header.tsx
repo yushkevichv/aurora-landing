@@ -55,10 +55,10 @@ export function Header() {
     return (
         <>
             {/* TOP LEFT: LOGO */}
-            <div className="fixed top-4 left-4 md:top-8 md:left-8 z-50">
+            <div className="absolute top-4 left-4 md:top-8 md:left-8 z-50">
                 <Link href="/" className="group block md:p-4">
                     <div className="h-8 md:h-12 w-auto">
-                        <Logo isLight={isLight} />
+                        <Logo isLight={false} />
                     </div>
                 </Link>
             </div>
