@@ -15,20 +15,20 @@ export function Hero() {
                     src="/img/hero-bg.png"
                     alt="Industrial Void"
                     fill
-                    className="object-cover opacity-40 grayscale"
+                    className="object-cover opacity-60 grayscale"
                     priority
                 />
-                <div className="absolute inset-0 bg-aurora-black/60 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-[url('/img/noise-texture.png')] opacity-30 mix-blend-overlay" />
+                <div className="absolute inset-0 bg-aurora-black/40 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-[url('/img/noise-texture.png')] opacity-20 mix-blend-overlay" />
             </div>
 
             {/* 2. MARQUEE */}
             <div className="absolute inset-0 z-10 flex flex-col justify-center p-0 m-0 overflow-hidden pointer-events-none">
                 <div className="flex animate-marquee whitespace-nowrap">
-                    <h1 className="font-display font-bold text-[40vw] md:text-[30vw] leading-none text-aurora-orange opacity-[0.08] tracking-tighter select-none uppercase pr-40">
+                    <h1 className="font-display font-bold text-[40vw] md:text-[30vw] leading-none text-aurora-orange opacity-[0.12] tracking-tighter select-none uppercase pr-40">
                         АВРОРА
                     </h1>
-                    <h1 className="font-display font-bold text-[40vw] md:text-[30vw] leading-none text-aurora-orange opacity-[0.08] tracking-tighter select-none uppercase pr-40">
+                    <h1 className="font-display font-bold text-[40vw] md:text-[30vw] leading-none text-aurora-orange opacity-[0.12] tracking-tighter select-none uppercase pr-40">
                         АВРОРА
                     </h1>
                 </div>
@@ -36,7 +36,13 @@ export function Hero() {
 
             {/* 3. CONTENT */}
             <div className="relative z-20 h-full w-full p-4 md:p-8 flex flex-col justify-between">
-                <div className="h-24"></div>
+                <div className="h-24 flex items-start justify-between">
+                    <div className="hidden md:block">
+                        <span className="font-mono text-xs text-white/40 uppercase tracking-[0.4em]">
+                            EST. 2023 / SAINT-PETERSBURG
+                        </span>
+                    </div>
+                </div>
 
                 <div className="grid grid-cols-12 gap-4 h-full">
                     {/* LEFT */}
@@ -57,7 +63,7 @@ export function Hero() {
                         </div>
 
                         <div className="flex flex-col items-center gap-8 mt-12 relative z-30">
-                            <p className="font-display text-base sm:text-xl md:text-3xl text-white/80 max-w-2xl text-center uppercase tracking-tight leading-tight px-4">
+                            <p className="font-display text-lg sm:text-2xl md:text-3xl text-white/80 max-w-2xl text-center uppercase tracking-tight leading-tight px-4">
                                 Проектируем и производим <br /> 
                                 <span className="text-white font-bold">несущие конструкции</span> для лидеров рынка
                             </p>
@@ -75,7 +81,7 @@ export function Hero() {
                 {/* BOTTOM */}
                 <div className="flex flex-col md:flex-row justify-between items-end gap-6 pt-12">
                     <div className="hidden md:flex flex-col items-center gap-2 group cursor-pointer">
-                        <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest group-hover:text-aurora-orange transition-colors">Вниз</span>
+                        <span className="font-mono text-xs text-white/40 uppercase tracking-widest group-hover:text-aurora-orange transition-colors">Вниз</span>
                         <div className="w-[1px] h-12 bg-white/20 group-hover:bg-aurora-orange transition-colors relative overflow-hidden">
                             <div className="absolute top-0 left-0 w-full h-1/2 bg-aurora-orange animate-slide-down" />
                         </div>

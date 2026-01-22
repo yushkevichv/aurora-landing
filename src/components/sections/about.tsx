@@ -31,7 +31,7 @@ export function About() {
             <Container ref={containerRef} className="relative z-10">
                 {/* 1. EDITORIAL HEADLINE */}
                 <div className="mb-24 pt-12 md:pt-0">
-                    <p className="font-mono text-xs uppercase tracking-[0.3em] text-aurora-orange mb-6 flex items-center gap-4">
+                    <p className="font-mono text-sm uppercase tracking-[0.3em] text-aurora-orange mb-6 flex items-center gap-4">
                         <span className="w-8 h-[1px] bg-aurora-orange"></span>
                         / О компании
                     </p>
@@ -77,7 +77,7 @@ export function About() {
                                         <h4 className="font-display text-lg sm:text-2xl uppercase mb-4 text-white group-hover:text-aurora-orange transition-colors duration-500 leading-tight">
                                             {item.title}
                                         </h4>
-                                        <p className="font-mono text-xs sm:text-sm text-white/40 leading-relaxed max-w-md">
+                                        <p className="font-mono text-sm sm:text-base text-white/40 leading-relaxed max-w-md">
                                             {item.desc}
                                         </p>
                                     </div>

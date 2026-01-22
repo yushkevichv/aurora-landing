@@ -46,14 +46,14 @@ export function Header() {
 
             {/* RIGHT SIDE: VERTICAL NAV (OPTIONAL OR HUD) */}
             <div className="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col gap-8 mix-blend-difference">
-                {['О заводе', 'Процесс', 'Проекты'].map((item, i) => {
+                {['О заводе', 'Процесс', 'Работы'].map((item, i) => {
                     const href = ['#about', '#process', '#portfolio'][i];
                     return (
                         <a
                             key={item}
                             href={href}
                             onClick={(e) => scrollToSection(e, href)}
-                            className="writing-vertical-rl font-mono text-xs text-white/40 hover:text-aurora-orange uppercase tracking-widest transition-colors py-4"
+                            className="writing-vertical-rl font-mono text-sm text-white/60 hover:text-aurora-orange uppercase tracking-[0.2em] transition-all duration-300 py-4"
                         >
                             {item}
                         </a>

@@ -4,12 +4,33 @@ import React from 'react';
 import { Container } from '@/components/ui/container';
 import { Section } from '@/components/ui/section';
 import { Button } from '@/components/ui/button';
-import { ArrowUpRight, Copy } from 'lucide-react';
+import { ArrowUpRight, Copy, Paperclip, X } from 'lucide-react';
 import Image from 'next/image';
+import { sendEmail } from '@/app/actions/send-email';
 
 export function Contacts() {
-    const [status, setStatus] = React.useState<'idle' | 'loading' | 'success'>('idle');
+    const [status, setStatus] = React.useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [phone, setPhone] = React.useState('');
+    const [selectedFiles, setSelectedFiles] = React.useState<File[]>([]);
+    const fileInputRef = React.useRef<HTMLInputElement>(null);
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files) {
+            const newFiles = Array.from(e.target.files);
+            const validFiles = newFiles.filter(file => {
+                if (file.size > 10 * 1024 * 1024) { // 10MB limit
+                    alert(`Файл ${file.name} слишком большой. Максимальный размер — 10МБ.`);
+                    return false;
+                }
+                return true;
+            });
+            setSelectedFiles(prev => [...prev, ...validFiles]);
+        }
+    };
+
+    const removeFile = (index: number) => {
+        setSelectedFiles(prev => prev.filter((_, i) => i !== index));
+    };
 
     const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         let value = e.target.value.replace(/\D/g, '');
@@ -36,13 +57,26 @@ export function Contacts() {
         setPhone(value.length === 0 ? '' : formatted);
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setStatus('loading');
-        // Simulate API call
-        setTimeout(() => {
+        
+        const formData = new FormData(e.currentTarget);
+        
+        // Remove individual files added by the default form and append our tracked files
+        formData.delete('files');
+        selectedFiles.forEach(file => {
+            formData.append('files', file);
+        });
+
+        const result = await sendEmail(formData);
+        
+        if (result.success) {
             setStatus('success');
-        }, 1500);
+            setSelectedFiles([]); // Reset files on success
+        } else {
+            setStatus('error');
+        }
     };
 
     return (
@@ -52,7 +86,7 @@ export function Contacts() {
             <Container className="relative z-10">
                 {/* Header */}
                 <div className="mb-24">
-                    <p className="font-mono text-xs uppercase tracking-[0.3em] text-aurora-orange mb-6 flex items-center gap-4">
+                    <p className="font-mono text-sm uppercase tracking-[0.3em] text-aurora-orange mb-6 flex items-center gap-4">
                         <span className="w-8 h-[1px] bg-aurora-orange"></span>
                         / Контакты
                     </p>
@@ -81,22 +115,38 @@ export function Contacts() {
                                     Отправить еще раз
                                 </Button>
                             </div>
+                        ) : status === 'error' ? (
+                            <div className="h-[400px] flex flex-col justify-center items-center text-center space-y-6">
+                                <h3 className="font-display text-3xl uppercase text-red-500">Ошибка отправки</h3>
+                                <p className="font-mono text-sm text-white/40 max-w-xs">
+                                    К сожалению, произошла ошибка. Пожалуйста, попробуйте позже или свяжитесь с нами напрямую.
+                                </p>
+                                <Button 
+                                    variant="ghost" 
+                                    onClick={() => setStatus('idle')}
+                                    className="text-white/60 hover:text-white"
+                                >
+                                    Попробовать снова
+                                </Button>
+                            </div>
                         ) : (
                             <form className="space-y-12" onSubmit={handleSubmit}>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                     <div className="group">
-                                        <label className="block font-mono text-[10px] uppercase tracking-[0.3em] mb-4 text-white group-focus-within:text-aurora-orange transition-colors">01_Ваше имя</label>
+                                        <label className="block font-mono text-xs uppercase tracking-[0.3em] mb-4 text-white group-focus-within:text-aurora-orange transition-colors">01_Ваше имя</label>
                                         <input 
                                             required
+                                            name="name"
                                             type="text" 
                                             className="w-full bg-transparent border-b border-white/20 p-2 focus:outline-none focus:border-aurora-orange transition-colors font-display text-xl uppercase placeholder:text-white/30 text-white" 
                                             placeholder="Иван Иванов" 
                                         />
                                     </div>
                                     <div className="group">
-                                        <label className="block font-mono text-[10px] uppercase tracking-[0.3em] mb-4 text-white group-focus-within:text-aurora-orange transition-colors">02_Телефон</label>
+                                        <label className="block font-mono text-xs uppercase tracking-[0.3em] mb-4 text-white group-focus-within:text-aurora-orange transition-colors">02_Телефон</label>
                                         <input 
                                             required
+                                            name="phone"
                                             type="tel" 
                                             value={phone}
                                             onChange={handlePhoneChange}
@@ -107,13 +157,55 @@ export function Contacts() {
                                     </div>
                                 </div>
                                 <div className="group">
-                                    <label className="block font-mono text-[10px] uppercase tracking-[0.3em] mb-4 text-white group-focus-within:text-aurora-orange transition-colors">03_Детали проекта</label>
+                                    <label className="block font-mono text-xs uppercase tracking-[0.3em] mb-4 text-white group-focus-within:text-aurora-orange transition-colors">03_Детали проекта</label>
                                     <textarea 
                                         required
+                                        name="message"
                                         rows={1} 
-                                        className="w-full bg-transparent border-b border-white/20 p-2 focus:outline-none focus:border-aurora-orange transition-colors font-mono text-sm placeholder:text-white/30 text-white" 
+                                        className="w-full bg-transparent border-b border-white/20 p-2 focus:outline-none focus:border-aurora-orange transition-colors font-mono text-base placeholder:text-white/30 text-white" 
                                         placeholder="Краткое описание задачи..." 
                                     />
+                                </div>
+
+                                <div className="space-y-6">
+                                    <label className="block font-mono text-xs uppercase tracking-[0.3em] text-white">04_Прикрепить файлы</label>
+                                    <div className="flex flex-wrap gap-4">
+                                        <button
+                                            type="button"
+                                            onClick={() => fileInputRef.current?.click()}
+                                            className="flex items-center gap-3 px-6 py-4 border border-white/10 hover:border-aurora-orange hover:text-aurora-orange transition-all duration-300 group"
+                                        >
+                                            <Paperclip size={18} className="text-white/40 group-hover:text-aurora-orange transition-colors" />
+                                            <span className="font-mono text-xs uppercase tracking-widest">Выбрать файлы</span>
+                                        </button>
+                                        <input 
+                                            type="file" 
+                                            name="files"
+                                            multiple
+                                            className="hidden" 
+                                            ref={fileInputRef}
+                                            onChange={handleFileChange}
+                                        />
+                                    </div>
+
+                                    {selectedFiles.length > 0 && (
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            {selectedFiles.map((file, index) => (
+                                                <div key={index} className="flex items-center justify-between p-3 bg-white/5 border border-white/5">
+                                                    <span className="font-mono text-[10px] uppercase tracking-wider text-white/60 truncate max-w-[200px]">
+                                                        {file.name}
+                                                    </span>
+                                                    <button 
+                                                        type="button"
+                                                        onClick={() => removeFile(index)}
+                                                        className="text-white/20 hover:text-red-500 transition-colors"
+                                                    >
+                                                        <X size={14} />
+                                                    </button>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
 
                                 <Button 
@@ -131,7 +223,7 @@ export function Contacts() {
                     <div className="lg:col-span-5 pt-4">
                         <div className="space-y-16">
                             <div className="group">
-                                <p className="font-mono text-[10px] text-aurora-orange uppercase tracking-[0.4em] mb-4">/ Прямая связь</p>
+                                <p className="font-mono text-xs text-aurora-orange uppercase tracking-[0.4em] mb-4">/ Прямая связь</p>
                                 <div className="space-y-4">
                                     <a href="mailto:105@td-avrora.ru" className="block font-display text-3xl md:text-4xl hover:text-aurora-orange transition-colors border-b border-white/5 pb-2 text-white">
                                         105@td-avrora.ru
@@ -144,11 +236,11 @@ export function Contacts() {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-white/5">
                                 <div>
-                                    <p className="font-mono text-[10px] uppercase tracking-widest text-white/40 mb-4">/ Офис</p>
-                                    <p className="font-display text-lg uppercase leading-tight text-white/80">Санкт-Петербург, <br /> Ул. Губина д.16А, <br /> помещ. 68</p>
+                                    <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-4">/ Офис</p>
+                                    <p className="font-display text-lg uppercase leading-tight text-white/80">г Санкт-Петербург, <br />вн.тер.г муниципальный округ Волковское, <br />ул Салова, 61 / строение 1, <br />помещ 4041н</p>
                                 </div>
                                 <div>
-                                    <p className="font-mono text-[10px] uppercase tracking-widest text-white/40 mb-4">/ Завод</p>
+                                    <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-4">/ Завод</p>
                                     <p className="font-display text-lg uppercase leading-tight text-white/80">Санкт-Петербург, <br /> ул. Челябинская 160</p>
                                 </div>
                             </div>

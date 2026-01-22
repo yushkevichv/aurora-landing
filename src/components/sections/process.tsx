@@ -22,7 +22,7 @@ export function Process() {
                 {/* HEADLINE */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12 pt-12 md:pt-0">
                     <div className="max-w-2xl">
-                        <p className="font-mono text-xs uppercase tracking-[0.3em] text-aurora-orange mb-6 flex items-center gap-4">
+                        <p className="font-mono text-sm uppercase tracking-[0.3em] text-aurora-orange mb-6 flex items-center gap-4">
                             <span className="w-8 h-[1px] bg-aurora-orange"></span>
                             / Производство
                         </p>
@@ -31,7 +31,7 @@ export function Process() {
                         </h2>
                     </div>
                     <div className="hidden md:block max-w-xs border-l border-black/10 pl-8 pb-4">
-                        <p className="font-mono text-xs text-gray-500 uppercase tracking-widest leading-relaxed">
+                        <p className="font-mono text-sm text-gray-500 uppercase tracking-widest leading-relaxed">
                             Сквозной контроль качества на каждом этапе: от анализа входящей документации до финального монтажа.
                         </p>
                     </div>
@@ -56,7 +56,7 @@ export function Process() {
                                 <h3 className="font-display text-xl sm:text-2xl uppercase mb-4 text-aurora-black group-hover:text-black group-hover:translate-x-2 transition-all duration-500">
                                     {step.title}
                                 </h3>
-                                <p className="font-mono text-sm text-gray-400 group-hover:text-black/80 leading-relaxed transition-colors duration-500">
+                                <p className="font-mono text-base text-gray-400 group-hover:text-black/80 leading-relaxed transition-colors duration-500">
                                     {step.desc}
                                 </p>
                             </div>

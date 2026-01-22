@@ -34,12 +34,12 @@ export function Portfolio() {
             <Container className="relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12 pt-12 md:pt-0">
                     <div className="max-w-2xl">
-                        <p className="font-mono text-xs uppercase tracking-[0.3em] text-aurora-orange mb-6 flex items-center gap-4">
+                        <p className="font-mono text-sm uppercase tracking-[0.3em] text-aurora-orange mb-6 flex items-center gap-4">
                             <span className="w-8 h-[1px] bg-aurora-orange"></span>
                             / Портфолио
                         </p>
-                        <h2 className="text-[2rem] sm:text-[3.5rem] md:text-[5.5rem] font-display uppercase font-medium leading-[0.9] tracking-tight">
-                            Наши <br /><span className="text-white/20">Знаковые</span> <span className="text-aurora-orange">Объекты</span>
+                        <h2 className="text-[2rem] sm:text-[3.5rem] md:text-[5.5rem] font-display uppercase font-medium leading-[0.9] tracking-tight text-white">
+                            Наши <span className="text-aurora-orange">Работы</span>
                         </h2>
                     </div>
                 </div>
@@ -68,7 +68,7 @@ export function Portfolio() {
                                 <h3 className="font-display text-xl sm:text-2xl uppercase mb-3 text-white">
                                     {project.title}
                                 </h3>
-                                <p className="font-mono text-xs text-white/40 leading-relaxed uppercase tracking-widest">
+                                <p className="font-mono text-sm text-white/40 leading-relaxed uppercase tracking-widest">
                                     {project.desc}
                                 </p>
                             </div>
