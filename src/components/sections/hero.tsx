@@ -57,7 +57,7 @@ export function Hero() {
                     {/* CENTER */}
                     <div className="col-span-12 md:col-span-8 flex flex-col justify-center items-start md:items-center text-left md:text-center md:-mt-24">
                         <div className="relative z-30">
-                            <h2 className="font-display font-bold text-4xl sm:text-7xl lg:text-8xl xl:text-[9.5rem] 2xl:text-[11rem] w-full uppercase leading-[0.8] tracking-tighter mb-8 drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+                            <h2 className="font-display font-bold text-4xl sm:text-7xl lg:text-8xl xl:text-8xl 2xl:text-8xl min-[1981px]:text-[11rem] w-full uppercase leading-[0.8] tracking-tighter mb-8 drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
                                 АРХИТЕКТОРЫ <br />
                                 <span className="text-aurora-orange">ИНДУСТРИАЛЬНОГО</span><br />
                                 <span className="text-white">РОСТА</span>
