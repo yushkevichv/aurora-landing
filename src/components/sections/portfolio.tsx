@@ -29,7 +29,7 @@ const projects = [
     },
     {
         id: '03',
-        title: 'Фермы покрытия',
+        title: 'Металлическая площадка тренажер для МЧС',
         images: [
             '/img/projects/project3/photo_2026-01-23 15.03.14.jpeg',
             '/img/projects/project3/photo_2026-01-23 15.03.17.jpeg'
