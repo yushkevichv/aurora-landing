@@ -240,7 +240,7 @@ export function Contacts() {
                                     <p className="font-display text-lg uppercase leading-tight text-white/80">г Санкт-Петербург, <br />вн.тер.г муниципальный округ Волковское, <br />ул Салова, 61 / строение 1, <br />помещ 4041н</p>
                                 </div>
                                 <div>
-                                    <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-4">/ Завод</p>
+                                    <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-4">/ Производство</p>
                                     <p className="font-display text-lg uppercase leading-tight text-white/80">Санкт-Петербург, <br /> ул. Челябинская 160</p>
                                 </div>
                             </div>

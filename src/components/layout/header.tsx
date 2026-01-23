@@ -84,7 +84,7 @@ export function Header() {
 
             {/* RIGHT SIDE: VERTICAL NAV (OPTIONAL OR HUD) */}
             <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-8">
-                {['О заводе', 'Процесс', 'Работы'].map((item, i) => {
+                {['О производстве', 'Процесс', 'Работы'].map((item, i) => {
                     const href = ['#about', '#process', '#portfolio'][i];
                     return (
                         <a

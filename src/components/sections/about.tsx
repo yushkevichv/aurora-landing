@@ -33,10 +33,12 @@ export function About() {
                 <div className="mb-24 pt-12 md:pt-0">
                     <p className="font-mono text-sm uppercase tracking-[0.3em] text-aurora-orange mb-6 flex items-center gap-4">
                         <span className="w-8 h-[1px] bg-aurora-orange"></span>
-                        / О компании
+                        / О производстве
                     </p>
                     <h2 className="font-display font-medium text-[1.75rem] sm:text-[3.5rem] md:text-[6rem] leading-[0.9] uppercase max-w-4xl tracking-tight">
-                        О компании
+                        Завод <br />
+                        <span className="text-white/20">металло</span> <br />
+                        <span className="text-aurora-orange">конструкций</span>
                     </h2>
                 </div>
 
