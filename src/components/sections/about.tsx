@@ -25,7 +25,7 @@ export function About() {
     const y2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
     return (
-        <Section id="about" data-theme="dark" className="py-32 bg-aurora-black text-aurora-white relative overflow-hidden grain-texture">
+        <Section id="about" data-theme="dark" className="pt-16 pb-32 bg-aurora-black text-aurora-white relative overflow-hidden grain-texture">
             <div className="absolute inset-0 pattern-grid-dark opacity-50" />
             
             <Container ref={containerRef} className="relative z-10">
@@ -36,9 +36,7 @@ export function About() {
                         / О компании
                     </p>
                     <h2 className="font-display font-medium text-[1.75rem] sm:text-[3.5rem] md:text-[6rem] leading-[0.9] uppercase max-w-4xl tracking-tight">
-                        Архитекторы <br />
-                        <span className="text-white/20">индустриального</span> <br />
-                        <span className="text-aurora-orange">роста.</span>
+                        О компании
                     </h2>
                 </div>
 
@@ -47,7 +45,7 @@ export function About() {
                     {/* Left: Statement */}
                     <div className="lg:col-span-5">
                         <p className="text-xl md:text-2xl font-light leading-relaxed text-white/80 border-l-2 border-aurora-orange pl-8">
-                            Мы проектируем и производим несущие металлоконструкции, которые становятся фундаментом для масштабных строительных проектов. Наш подход — это сочетание инженерной точности и понимания бизнес-процессов заказчика.
+                            Мы проектируем и производим металлоконструкции, которые становятся фундаментом для масштабных строительных проектов. Наш подход — это сочетание инженерной точности и понимания бизнес-процессов заказчика.
                         </p>
                     </div>
 

@@ -53,7 +53,7 @@ export function Hero() {
                     </div>
 
                     {/* CENTER */}
-                    <div className="col-span-12 md:col-span-8 flex flex-col justify-center items-start md:items-center text-left md:text-center">
+                    <div className="col-span-12 md:col-span-8 flex flex-col justify-center items-start md:items-center text-left md:text-center md:-mt-24">
                         <div className="relative z-30">
                             <h2 className="font-display font-bold text-3xl sm:text-6xl md:text-[10rem] w-full uppercase leading-[0.8] tracking-tighter mb-8 drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
                                 ЗАВОД <br />
@@ -65,7 +65,7 @@ export function Hero() {
                         <div className="flex flex-col items-start md:items-center gap-8 mt-12 relative z-30">
                             <p className="font-display text-lg sm:text-2xl md:text-3xl text-white/80 max-w-2xl text-left md:text-center uppercase tracking-tight leading-tight px-0 md:px-4">
                                 Проектируем и производим <br /> 
-                                <span className="text-white font-bold">несущие конструкции</span> для лидеров рынка
+                                <span className="text-white font-bold">металлоконструкции</span> для лидеров рынка
                             </p>
                         </div>
                     </div>
