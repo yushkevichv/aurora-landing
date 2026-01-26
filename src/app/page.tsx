@@ -30,13 +30,20 @@ export default function Home() {
               
               <div className="flex flex-col md:flex-row items-start gap-8">
                 <div className="flex flex-col gap-2">
-                  <Image 
-                    src="/img/pugofka.svg" 
-                    alt="Pugofka" 
-                    width={120} 
-                    height={120} 
-                    className="opacity-40 grayscale brightness-200 shrink-0 -ml-2"
-                  />
+                  <a 
+                    href="https://pugofka.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block transition-opacity hover:opacity-100"
+                  >
+                    <Image 
+                      src="/img/pugofka.svg" 
+                      alt="Pugofka" 
+                      width={120} 
+                      height={120} 
+                      className="opacity-40 grayscale brightness-200 shrink-0 -ml-2"
+                    />
+                  </a>
                 </div>
                 <div className="space-y-4 font-mono text-xs uppercase tracking-[0.2em] leading-relaxed text-white/50 max-w-4xl">
                   <p>
