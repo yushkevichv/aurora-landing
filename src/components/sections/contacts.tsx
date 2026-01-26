@@ -4,13 +4,14 @@ import React from 'react';
 import { Container } from '@/components/ui/container';
 import { Section } from '@/components/ui/section';
 import { Button } from '@/components/ui/button';
-import { ArrowUpRight, Copy, Paperclip, X } from 'lucide-react';
-import Image from 'next/image';
+import { ArrowUpRight, Paperclip, X } from 'lucide-react';
 import { sendEmail } from '@/app/actions/send-email';
 
 export function Contacts() {
     const [status, setStatus] = React.useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = React.useState('');
+    const [name, setName] = React.useState('');
+    const [message, setMessage] = React.useState('');
     const [phone, setPhone] = React.useState('');
     const [selectedFiles, setSelectedFiles] = React.useState<File[]>([]);
     const fileInputRef = React.useRef<HTMLInputElement>(null);
@@ -127,7 +128,7 @@ export function Contacts() {
                 {/* Header */}
                 <div className="mb-24">
                     <p className="font-mono text-sm uppercase tracking-[0.3em] text-aurora-orange mb-6 flex items-center gap-4">
-                        <span className="w-8 h-[1px] bg-aurora-orange"></span>
+                        <span className="w-8 h-px bg-aurora-orange"></span>
                         / Контакты
                     </p>
                     <h2 className="font-display text-[2rem] sm:text-[3.5rem] md:text-[6rem] uppercase text-white leading-[0.9] tracking-tight">
@@ -178,6 +179,8 @@ export function Contacts() {
                                             required
                                             name="name"
                                             type="text" 
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
                                             className="w-full bg-transparent border-b border-white/20 p-2 focus:outline-none focus:border-aurora-orange transition-colors font-display text-xl uppercase placeholder:text-white/30 text-white" 
                                             placeholder="Иван Иванов" 
                                         />
@@ -202,6 +205,8 @@ export function Contacts() {
                                         required
                                         name="message"
                                         rows={1} 
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)}
                                         className="w-full bg-transparent border-b border-white/20 p-2 focus:outline-none focus:border-aurora-orange transition-colors font-mono text-base placeholder:text-white/30 text-white" 
                                         placeholder="Краткое описание задачи..." 
                                     />
