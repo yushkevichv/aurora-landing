@@ -283,7 +283,7 @@ export function Contacts() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-white/5">
                                 <div>
                                     <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-4">/ Офис</p>
-                                    <p className="font-display text-lg uppercase leading-tight text-white/80">г Санкт-Петербург, <br />вн.тер.г муниципальный округ Волковское, <br />ул Салова, 61 / строение 1, <br />помещ 4041н</p>
+                                    <p className="font-display text-lg uppercase leading-tight text-white/80">г Санкт-Петербург, <br />вн.тер.г МО Волковское, <br />ул. Салова, 61 / стр. 1, <br />пом. 4041н</p>
                                 </div>
                                 <div>
                                     <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-4">/ Производство</p>
