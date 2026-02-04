@@ -87,7 +87,7 @@ export async function sendEmail(formData: FormData) {
 
     const mailOptions = {
         from: '"ЗМК Аврора" <info@zmk-avrora.ru>',
-        to: 'admin@td-avrora.ru',
+        to: process.env.MAIL_TO || 'info@zmk-avrora.ru',
         subject: `Новая заявка: ${name}`,
         text: `
             Имя: ${name}
