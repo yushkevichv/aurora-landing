@@ -66,6 +66,9 @@ export async function sendEmail(formData: FormData) {
             user: process.env.SMTP_USER,
             pass: process.env.SMTP_PASS,
         },
+        tls: {
+            rejectUnauthorized: false
+        }
     });
 
     if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
@@ -86,7 +89,7 @@ export async function sendEmail(formData: FormData) {
     );
 
     const mailOptions = {
-        from: '"ЗМК Аврора" <info@zmk-avrora.ru>',
+        from: process.env.SMTP_USER || 'noreply@avroraspecstal.ru',
         to: process.env.MAIL_TO || 'info@zmk-avrora.ru',
         subject: `Новая заявка: ${name}`,
         text: `
