@@ -57,21 +57,21 @@ export async function sendEmail(formData: FormData) {
     }
 
     // SMTP configuration
-    const port = parseInt(process.env.MAILTRAP_PORT || '465');
+    const port = parseInt(process.env.SMTP_PORT || '465');
     const transporter = nodemailer.createTransport({
-        host: process.env.MAILTRAP_HOST || 'smtp.mail.ru',
+        host: process.env.SMTP_HOST || 'smtp.mail.ru',
         port: port,
         secure: port === 465,
         auth: {
-            user: process.env.MAILTRAP_USER,
-            pass: process.env.MAILTRAP_PASS,
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
         },
     });
 
-    if (!process.env.MAILTRAP_USER || !process.env.MAILTRAP_PASS) {
+    if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
         return { 
             success: false, 
-            error: 'Отсутствуют настройки почтового сервера (MAILTRAP_USER/PASS). Пожалуйста, добавьте их в переменные окружения Vercel.' 
+            error: 'Отсутствуют настройки почтового сервера (SMTP_USER/SMTP_PASS). Добавьте их в переменные окружения.' 
         };
     }
 
@@ -107,9 +107,9 @@ export async function sendEmail(formData: FormData) {
 
     try {
         console.log('Attempting to send email with:', {
-            host: process.env.MAILTRAP_HOST,
-            user: process.env.MAILTRAP_USER,
-            pass: process.env.MAILTRAP_PASS ? '******' : 'MISSING'
+            host: process.env.SMTP_HOST,
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS ? '******' : 'MISSING'
         });
         await transporter.sendMail(mailOptions);
         console.log('Email sent successfully');
