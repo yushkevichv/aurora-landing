@@ -56,10 +56,12 @@ export async function sendEmail(formData: FormData) {
         }
     }
 
-    // Mailtrap configuration
+    // SMTP configuration
+    const port = parseInt(process.env.MAILTRAP_PORT || '465');
     const transporter = nodemailer.createTransport({
-        host: process.env.MAILTRAP_HOST || 'sandbox.smtp.mailtrap.io',
-        port: parseInt(process.env.MAILTRAP_PORT || '2525'),
+        host: process.env.MAILTRAP_HOST || 'smtp.mail.ru',
+        port: port,
+        secure: port === 465,
         auth: {
             user: process.env.MAILTRAP_USER,
             pass: process.env.MAILTRAP_PASS,
