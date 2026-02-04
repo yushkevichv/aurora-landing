@@ -276,8 +276,8 @@ export function Contacts() {
                             <div className="group">
                                 <p className="font-mono text-xs text-aurora-orange uppercase tracking-[0.4em] mb-4">/ Прямая связь</p>
                                 <div className="space-y-4">
-                                    <a href="mailto:105@td-avrora.ru" className="block font-display text-3xl md:text-4xl hover:text-aurora-orange transition-colors border-b border-white/5 pb-2 text-white">
-                                        105@td-avrora.ru
+                                    <a href="mailto:info@zmk-avrora.ru" className="block font-display text-3xl md:text-4xl hover:text-aurora-orange transition-colors border-b border-white/5 pb-2 text-white">
+                                        info@zmk-avrora.ru
                                     </a>
                                     <a href="tel:89006476606" className="block font-display text-3xl md:text-4xl hover:text-aurora-orange transition-colors text-white">
                                         8 (900) 647-66-06
