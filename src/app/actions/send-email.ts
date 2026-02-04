@@ -84,7 +84,7 @@ export async function sendEmail(formData: FormData) {
     );
 
     const mailOptions = {
-        from: '"Aurora Landing" <noreply@aurora-landing.com>',
+        from: '"ЗМК Аврора" <info@zmk-avrora.ru>',
         to: 'admin@td-avrora.ru',
         subject: `Новая заявка: ${name}`,
         text: `
